@@ -1,0 +1,17 @@
+﻿Nome;MVP - Engenharia de Dados
+Versão;R04
+Descrição;Pipeline de dados utilizando tecnologias na nuvem, composto de busca, coleta, modelagem, carga e análise de dados com o objetivo de verificar indicadores diretamente ligados ao Índice de Desenvolvimento Humano e quais medidas podem ser executadas com o intuito de elevar esse índice.
+Estrutura;A estrutura de dados é composta por um dataset dividido em duas partes, conforme pode ser observado na modelagem de dados.
+Tabelas;Tabela 1: CITY, STATE, CAPITAL, IBGE_RES_POP, IBGE_RES_POP_BRAS, IBGE_RES_POP_ESTR, IBGE_DU, IBGE_DU_URBAN, IBGE_DU_RURAL, IBGE_POP, IBGE_1, IBGE_1-4, IBGE_5-9, IBGE_10-14, IBGE_15-59, IBGE_60+, IBGE_PLANTED_AREA, IBGE_CROP_PRODUCTION_$, , IDHM Ranking 2010, IDHM, IDHM_Renda, IDHM_Longevidade, IDHM_Educacao, LONG, LAT, PAY_TV, FIXED_PHONES, ALT, AREA, REGIÃO_TUR, CATEGORIA_TUR, RURAL_URBAN, GVA_AGROPEC, GVA_INDUSTRY, GVA_SERVICES, GVA_PUBLIC, GVA_TOTAL, TAXES'
+;Tabela 2: 'CITY, STATE, GDP, POP_GDP, GDP_CAPITA, GVA_MAIN, MUN_EXPENDIT, COMP_TOT, COMP_A, COMP_B, COMP_C, COMP_D, COMP_E, COMP_F, COMP_G, COMP_H, COMP_I, COMP_J, COMP_K, COMP_L, COMP_M, COMP_N, COMP_O, COMP_P, COMP_Q, COMP_R, COMP_S, COMP_T, COMP_U, HOTELS, BEDOS, Pr_agencies, PU_agencies, Pr_Bank, Pu_bank, Pr_assets, PU_Assets, Cars, Motorcycles, UBER, MAC, WAL-MART, POST_OFFICES'
+Chaves identificadoras e de ligação;As chaves de ligação entre ambas as tabelas são as colunas CITY, STATE.
+Granularidade;Os dados de população estão por unidade em cada cidade, os valores relativos a valor estão em reais, a altitude é em metros, IBGE_PLANTED_AREA está em hectares, onde (1 hectare = 10,000 square meters) e a área das cidades está em quilometro quadrado onde 1 kilometer = 1,000,000 square meters
+Temporalidade;2023
+Origem;A origem de dados encontra-se pormenorizada no catálogo de dados
+Licença de uso;Os dados foram retirados do repositório aberto Kaggle, através do site https://www.kaggle.com/datasets/crisparada/brazilian-cities
+Transformações realizadas;Foi realizada a divisão do dataset em dois datasets, por intermédio da linguagem de python no VSCode, após a criação desses dois datasets, estes foram importados no Azure Data Factory, onde foram excluídas as seguintes colunas: xxxxxxx as quais não eram importantes para este estudo. Foram ainda no Data Factory configuradas as colunas que estavam todas como string para string, integer ou float, de acordo com a necessidade. E no Azure Data Studio foram realizadas outras transformações, tais quais transformar a coluna MUN_EXPENDIT em BigInt e alterar a coluna de estado de string para Char (2).
+Usuário do banco de dados;Julia Bragança dos Santos Ferreira Lima
+Atribuições de função;Proprietário - Permite o acesso completo para gerenciar todos os recursos, incluindo a capacidade de atribuir funções no Azure RBAC.
+;
+;
+;
